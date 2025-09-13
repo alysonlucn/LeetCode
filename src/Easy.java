@@ -74,4 +74,40 @@ public class Easy {
         }
         return word;
     }
+
+    //5. Find Most Frequent Vowel and Consonant
+    public int maxFreqSum(String s) {
+        String vowels = s.replaceAll("[^aeiouAEIOU]", "");
+        String consonants = s.replaceAll("[aeiouAEIOU]", "");
+
+        int maxVowel = 0;
+        for (int i = 0; i < vowels.length(); i++) {
+            char currentChar = vowels.charAt(i);
+            int currentFreq = 0;
+            for (int j = 0; j < vowels.length(); j++) {
+                if (currentChar == vowels.charAt(j)) {
+                    currentFreq++;
+                }
+            }
+            if (currentFreq > maxVowel) {
+                maxVowel = currentFreq;
+            }
+        }
+
+        int maxConsonant = 0;
+        for (int i = 0; i < consonants.length(); i++) {
+            char currentChar = consonants.charAt(i);
+            int currentFreq = 0;
+            for (int j = 0; j < consonants.length(); j++) {
+                if (currentChar == consonants.charAt(j)) {
+                    currentFreq++;
+                }
+            }
+            if (currentFreq > maxConsonant) {
+                maxConsonant = currentFreq;
+            }
+        }
+
+        return maxVowel + maxConsonant;
+    }
 }
