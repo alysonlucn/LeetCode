@@ -110,4 +110,29 @@ public class Easy {
 
         return maxVowel + maxConsonant;
     }
+
+    //6. Maximum Number of Words You Can Type
+    public int canBeTypedWords(String text, String brokenLetters) {
+        String[] words = text.split(" ");
+
+        int count = 0;
+        for (String word : words) {
+            boolean isValid = true;
+
+            for (int i = 0; i < word.length(); i++) {
+                char c = word.charAt(i);
+
+                if (brokenLetters.indexOf(c) != -1) {
+                    isValid = false;
+                    break;
+                }
+            }
+
+            if (isValid) {
+                count++;
+            }
+        }
+
+        return count;
+    }
 }
