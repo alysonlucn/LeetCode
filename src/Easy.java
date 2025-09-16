@@ -135,4 +135,21 @@ public class Easy {
 
         return count;
     }
+
+    //7. Find the Index of the First Occurrence in a String
+    public int strStr(String haystack, String needle) {
+        return haystack.indexOf(needle);
+    }
+
+    //8. Remove Element
+    public int removeElement(int[] nums, int val) {
+        int j = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != val) {
+                nums[j] = nums[i];
+                j++;
+            }
+        }
+        return j;
+    }
 }
