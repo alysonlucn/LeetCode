@@ -162,4 +162,14 @@ public class Easy {
         }
         return nums.length;
     }
+
+    public int lengthOfLastWord(String s) {
+        String novaPalavra = s.trim();
+        int ultimaPalavra = novaPalavra.lastIndexOf(" ");
+        int count = 0;
+        for(int i = ultimaPalavra + 1; i < novaPalavra.length(); i++) {
+            count++;
+        }
+        return count;
+    }
 }
