@@ -164,10 +164,10 @@ public class Easy {
     }
 
     public int lengthOfLastWord(String s) {
-        String novaPalavra = s.trim();
-        int ultimaPalavra = novaPalavra.lastIndexOf(" ");
+        String trimmed = s.trim();
+        int lastSpace = trimmed.lastIndexOf(" ");
         int count = 0;
-        for(int i = ultimaPalavra + 1; i < novaPalavra.length(); i++) {
+        for (int i = lastSpace + 1; i < trimmed.length(); i++) {
             count++;
         }
         return count;
